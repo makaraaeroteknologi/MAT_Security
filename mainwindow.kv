@@ -1,0 +1,117 @@
+<MainWindow>:
+	name: "Main"
+	canvas.before:
+		Color:
+			rgba:(21/255, 20/255, 40/255, 1)
+		Rectangle:
+			pos: self.pos
+			size: self.size
+	
+	GridLayout:
+		cols:2
+		rows:1
+	
+		FloatLayout:
+			Image:
+				id: video_player
+				source: 'resources/SS_videoimg.png'
+				size_hint: None,None
+				size : 892,595
+				pos: 36,89
+				
+			FloatLayout:
+
+				ToggleButton:
+					id: play_button
+					background_normal : 'resources/SS_playbutton_idle.png'
+					background_down : 'resources/SS_playbutton_down.png'
+					size_hint: None,None
+					size : 52,52
+					pos: 414,19
+					on_press: root.playbutton_press()
+				
+				ToggleButton:
+					id: pause_button
+					background_normal : 'resources/SS_pause_down.png'
+					background_down : 'resources/SS_pause_idle.png'
+					size_hint: None,None
+					size : 52,52
+					pos: 498,19
+					on_press: root.pausebutton_press()
+					
+				
+		GridLayout:
+			cols:1
+			rows:2
+
+			FloatLayout:
+				orientation: 'vertical'
+				size : 280,144
+				pos: 964,540
+				canvas.before:
+					Rectangle:
+						pos: 964,540
+						size: 280,144
+						source: 'resources/Rectangle 7.png'
+
+				Label:
+					text: "Footage Source:"
+					font_size: 24
+					halign : "left"
+					size_hint: None,None
+					width : 256
+					height : 27
+					pos: 940,650
+
+				TextInput:
+					id: url_input
+					hint_text: "Add Videostream link"
+					hint_text_color: 79/255, 75/255, 116/255, 1
+					font_size : 18
+					halign : 'left'
+					valign : 'middle'
+					size_hint: None,None
+					width : 240
+					height : 35
+					pos: 978,610
+					multiline : False
+					background_color: 0,0,0,0
+					foreground_color: 79/255, 75/255, 116/255, 1
+					never_selected: False
+					on_focus: if self.never_selected == False: self.text = ''; self.never_selected = True
+
+				ToggleButton:
+					id: connect_button
+					background_normal: 'resources/SS_connect.png'
+					background_down: 'resources/SS_disconnect.png'
+					size_hint: None,None
+					width : 248
+					height : 40
+					pos : 980, 556
+
+			FloatLayout:
+				size: 280,419
+				pos: 964,89
+				canvas.before:
+					Rectangle:
+						pos: 964,89
+						size: 280, 419
+						source: 'resources/Rectangle 13.png'
+
+				Image:
+					id: notif_img
+					source: 'resources/SS_checkshield.png'
+					size_hint: None,None
+					pos: 1053, 290
+					size: 102, 124.67
+				
+				Label:
+					id: notif_string
+					text: "Tidak ada penyusup \nterdeteksi"
+					font_size: 24
+					halign : "center"
+					size_hint: None, None
+					width : 223
+					height : 49
+					pos : 991,188
+
