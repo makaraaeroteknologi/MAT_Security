@@ -2,8 +2,6 @@ import cv2
 import numpy as np
 from scipy.spatial.distance import pdist, squareform
 
-
-
 def plot_pedestrian_boxes_on_image(frame, pedestrian_boxes):
     frame_h = frame.shape[0]
     frame_w = frame.shape[1]
