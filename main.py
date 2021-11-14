@@ -79,13 +79,12 @@ class MainWindow(Widget):
 			self.ids.notif_string.text = "Tidak ada penyusup \nterdeteksi"
           
 		total = str(num_pedestrians)
-		#cv2.imshow("CV2 Image", frame)
-		#cv2.waitKey()
+
 		# convert it to texture
 		buf1 = cv2.flip(frame, 0)
 		buf = buf1.tostring()
 		texture1 = Texture.create(size=(frame.shape[1], frame.shape[0]), colorfmt='bgr')
-		#if working on RASPBERRY PI, use colorfmt='rgba' here instead, but stick with "bgr" in blit_buffer. 
+
 		texture1.blit_buffer(buf, colorfmt='bgr', bufferfmt='ubyte')
 		# display image from the texture
 		self.ids.video_player.texture = texture1
