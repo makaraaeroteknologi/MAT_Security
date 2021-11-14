@@ -1,7 +1,3 @@
-# Already trained model available @
-# https://github.com/tensorflow/models/tree/master/research/object_detection
-# was used as a part of this code.
-
 import glob, os, tarfile, urllib
 import tensorflow as tf
 from utils import label_map_util
@@ -47,7 +43,7 @@ def set_model(model_name, label_name):
             tf.import_graph_def(od_graph_def, name="")
 
     # Loading label map
-    # Label maps map indices to category names, so that when our convolution network predicts 5, we know that this corresponds to airplane. Here I 		use internal utility functions, but anything that returns a dictionary mapping integers to appropriate string labels would be fine
+ 
     label_map = label_map_util.load_labelmap(path_to_labels)
     categories = label_map_util.convert_label_map_to_categories(
         label_map, max_num_classes=num_classes, use_display_name=True
