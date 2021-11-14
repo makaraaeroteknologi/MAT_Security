@@ -1,6 +1,3 @@
-# Already trained model available @
-# https://github.com/tensorflow/models/tree/master/research/object_detection
-# was used as a part of this code.
 
 import backbone
 import tensorflow as tf
@@ -10,11 +7,6 @@ import numpy as np
 
 class model:
     def __init__(self):
-        # detection_graph, self.category_index = backbone.set_model('ssd_mobilenet_v1_fpn_shared_box_predictor_640x640_coco14_sync_2018_07_03',
-        #                                                           'mscoco_label_map.pbtxt')
-        # # detection_graph, self.category_index = backbone.set_model(
-        # #     'faster_rcnn_resnet50_coco_2018_01_28',
-        # #     'mscoco_label_map.pbtxt')
         detection_graph, self.category_index = backbone.set_model(
             "ssd_mobilenet_v1_coco_2018_01_28", "mscoco_label_map.pbtxt"
         )
@@ -31,11 +23,8 @@ class model:
         return self.category_index
 
     def detect_pedestrians(self, frame):
-        # Actual detection.
-        # input_frame = cv2.resize(frame, (350, 200))
         input_frame = frame
 
-        # Expand dimensions since the model expects images to have shape: [1, None, None, 3]
         image_np_expanded = np.expand_dims(input_frame, axis=0)
         (boxes, scores, classes, num) = self.sess.run(
             [
