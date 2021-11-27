@@ -1,12 +1,13 @@
 # MAT_Security
 MAT Security
 
-Program ini memiliki fungsi untuk mendeteksi manusia dari kamera drone yang ditampilkan pada layar komputer secara real time.
-Pengiriman data gambar dari drone ke komputer dilakukan menggunakan metode screen cast menggunakan mobile phone.
+![Second](https://user-images.githubusercontent.com/94161328/143679660-c8f4085a-0828-4b8d-b25d-16b1faf6ecae.png)
 
+This program has a function to detect humans from the drone camera displayed on the computer screen in real time.
+Sending image data from the drone to the computer is done by screen cast using a smartphone.
 
-Cara menggunakan aplikasi
-1. Jalankan program screen cast dari mobile phone yang terhubung pada kamera drone
-2. Copy URL screen cast yang tersedia pada mobile phone
-3. Paste URL pada input footage source lalu klik connect
-4. Klik tombol play untuk menjalankan program
+How to use the app
+1. Run any screen cast apps from the smartphone connected to the drone camera
+2. Copy the screen cast URL available on the smartphone
+4. Paste the URL on the input footage source then click connect
+5. Click the play button to run the program
